@@ -2,7 +2,9 @@ package org.launchcode.java.demos.lsn4classes2;
 
 import java.util.ArrayList;
 
-public class Course {
+public class
+
+Course {
     private String topic;
     private Teacher instructor;
     private ArrayList<Student> enrolledStudents;
