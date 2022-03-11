@@ -3,25 +3,24 @@ package StudioExercises.studio_7_FunWithQuizzes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MultipleChoice extends Question {
+public class CheckBox extends Question{
 
-    private ArrayList<Integer> multipleChoicePossibleAnswer;
+    private ArrayList<String> checkboxPossibleAnswers;
     private int correctAnswer;
 
-
-    public MultipleChoice(String question, int pointValue, int correctAnswer, ArrayList<Integer> multipleChoicePossibleAnswer) {
+    public CheckBox(String question, ArrayList<String> checkboxPossibleAnswers, int correctAnswer, int pointValue) {
         super(question, pointValue);
+        this.checkboxPossibleAnswers = checkboxPossibleAnswers;
         this.correctAnswer = correctAnswer;
-        this.multipleChoicePossibleAnswer = multipleChoicePossibleAnswer;
         setPointValue(1);
     }
 
     @Override
     public void displayPossibleAnswer() {
-        for(int i = 0; i < multipleChoicePossibleAnswer.size(); i++)
-        System.out.println(multipleChoicePossibleAnswer.get(i));
+        for(int i = 0; i < checkboxPossibleAnswers.size(); i++){
+            System.out.println(checkboxPossibleAnswers.get(i));
+        }
     }
-
 
     public boolean isCorrect(int index){
         if (index == correctAnswer){
@@ -30,6 +29,7 @@ public class MultipleChoice extends Question {
             return false;
         }
     }
+
     @Override
     public int getCorrectAnswer(){
         Scanner input = new Scanner(System.in);
@@ -43,4 +43,5 @@ public class MultipleChoice extends Question {
         }
 
     }
+
 }

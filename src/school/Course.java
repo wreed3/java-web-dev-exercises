@@ -15,7 +15,4 @@ public class Course {
         this.courseCredits = courseCredits;
     }
 
-
-
-
 }
